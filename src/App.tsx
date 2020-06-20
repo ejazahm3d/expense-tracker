@@ -1,22 +1,34 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import ExpenseTracker from "./components/ExpenseTracker";
+import Balance from "./components/Balance";
+import Layout from "./components/Layout";
+
+export interface Transaction {
+  id: string;
+  name: string;
+  amount: number;
+}
 
 function App() {
-  const [bool, setBool] = useState(true);
-
-  setBool(false);
+  const [transactions, setTransactions] = useState<Transaction[]>([
+    { id: "1", name: "hello", amount: 123 },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <ExpenseTracker />
-      </header>
-    </div>
+    <Layout>
+      <div className="hero is-primary is-fullheight">
+        <div className="section">
+          <section className="columns">
+            <div className="column">
+              <ExpenseTracker />
+            </div>
+            <div className="column">
+              <Balance transactions={transactions} />
+            </div>
+          </section>
+        </div>
+      </div>
+    </Layout>
   );
 }
 
