@@ -1,11 +1,7 @@
 import React from "react";
-import { Transaction } from "../App";
+import { Transaction } from "../context/GlobalState";
 
-interface Props {
-  transactions: Transaction[];
-}
-
-const Balance: React.FC<Props> = ({ transactions }) => {
+const Balance = ({ transactions }) => {
   return (
     <>
       <div className="box">

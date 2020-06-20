@@ -1,8 +1,6 @@
 import React from "react";
 
-interface Props {}
-
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <header className="column">

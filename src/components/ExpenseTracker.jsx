@@ -1,8 +1,6 @@
 import React from "react";
 
-interface Props {}
-
-const ExpenseTracker = (props: Props) => {
+const ExpenseTracker = (props) => {
   return <div className="box">Hello World</div>;
 };
 

@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./App.scss";
 import ExpenseTracker from "./components/ExpenseTracker";
 import Balance from "./components/Balance";
 import Layout from "./components/Layout";
-
-export interface Transaction {
-  id: string;
-  name: string;
-  amount: number;
-}
+import { AppCtx } from "./context/GlobalState";
 
 function App() {
-  const [transactions, setTransactions] = useState<Transaction[]>([
-    { id: "1", name: "hello", amount: 123 },
-  ]);
+  const { transactions } = useContext(AppCtx);
+
   return (
     <Layout>
       <div className="hero is-primary is-fullheight">
