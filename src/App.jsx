@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./App.scss";
-import ExpenseTracker from "./components/ExpenseTracker";
+import ExpenseTrackerForm from "./components/ExpenseTrackerForm";
 import Balance from "./components/Balance";
 import Layout from "./components/Layout";
 
@@ -11,7 +11,7 @@ function App() {
         <div style={{ height: "100vh" }} className="section container">
           <section className="columns">
             <div className="column">
-              <ExpenseTracker />
+              <ExpenseTrackerForm />
             </div>
             <div className="column">
               <Balance />

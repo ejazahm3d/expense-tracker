@@ -8,7 +8,12 @@ const ExpenseTracker = (props) => {
   const { addTransaction } = useContext(AppCtx);
   const handleSubmitForm = (data) => {
     const amount = data.transactionType === "exp" ? -data.amount : +data.amount;
-    const transaction = { id: v4(), name: data.name, amount };
+    const transaction = {
+      id: v4(),
+      name: data.name,
+      amount,
+      transactionType: data.transactionType,
+    };
     addTransaction(transaction);
     reset();
   };
