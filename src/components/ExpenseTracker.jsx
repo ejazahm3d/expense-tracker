@@ -17,17 +17,6 @@ const ExpenseTracker = (props) => {
     <div className="box">
       <form onSubmit={handleSubmit(handleSubmitForm)}>
         <div className="field">
-          <label className="label">Transaction Type</label>
-          <div className="control">
-            <div className="select">
-              <select name="transactionType" ref={register}>
-                <option value="inc">Income</option>
-                <option value="exp">Expense</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div className="field">
           <label className="label">Name</label>
 
           <div className="control">
@@ -46,6 +35,17 @@ const ExpenseTracker = (props) => {
             </span>
           </div>
           {errors.name && <p className="help is-danger">Name is required</p>}
+        </div>
+        <div className="field">
+          <label className="label">Transaction Type</label>
+          <div className="control">
+            <div className="select">
+              <select name="transactionType" ref={register}>
+                <option value="inc">Income</option>
+                <option value="exp">Expense</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div className="field">
           <label className="label">Amount</label>
