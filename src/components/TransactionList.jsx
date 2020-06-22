@@ -6,7 +6,14 @@ const TransactionList = ({ transactions }) => {
   return (
     <div>
       {transactions.map((transaction) => (
-        <div className={`box `} key={transaction.id}>
+        <div
+          className={`box ${
+            transaction.transactionType === "exp"
+              ? "has-background-danger-light"
+              : "has-background-success-light"
+          }`}
+          key={transaction.id}
+        >
           <div className="columns">
             <div className="column is-one-third-mobile is-one-third-tablet">
               {transaction.name}
